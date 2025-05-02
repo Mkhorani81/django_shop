@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'home:home' %}">Home</a>
+            </li>
+
+            {% if request.user.is_authenticated %}
+                <li>
+                    <a class="nav-link active" href="{% url 'accounts:user_logout' %}">Logout</a>
+                </li>
+                {% if user.is_admin %}
+                    <li>
+                        <a class="nav-link active" href="{% url 'home:bucket' %}">Bucket</a>
+                    </li>
+                {% endif %}
+            {% else %}
+                <li>
+                    <a class="nav-link active" href="{% url 'accounts:user_register' %}">Register</a>
+                </li>
+                <li>
+                    <a class="nav-link active" href="{% url 'accounts:user_login' %}">Login</a>
+                </li>
+            {% endif %}
+            <a class="nav-link active" href="{% url 'orders:cart' %}">CART {{ cart|length }}</a>
+        </ul>
+    </div>
+</nav>

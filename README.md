@@ -5,4 +5,4 @@ For runing this project:
   2. python manage.py runserver
 
   3. For using celery need to open another terminal and running celery worker by:
-    "celery -A tasks worker --pool=solo --loglevel=info"
+    "celery -A shop worker --pool=solo --loglevel=info"

@@ -6,3 +6,5 @@ For runing this project:
 
   3. For using celery need to open another terminal and running celery worker by:
     "celery -A shop worker --pool=solo --loglevel=info"
+
+  4. For using caching system need to run redis on linux(if your OS is windows you could use ubuntu that windows has prepared) too by : "redis-cli" 
